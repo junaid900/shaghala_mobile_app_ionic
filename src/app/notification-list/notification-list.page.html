@@ -1,0 +1,81 @@
+<ion-row class="header pt6">
+  <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/menu.png" alt="" (click)="openMenu()">
+    <!-- <img src="assets/images/menu.png" alt=""> -->
+  </ion-col>
+  <ion-col size="1.5" class="text-center m-auto">
+    <!-- <img src="assets/images/back.png" (click)="goBack()" alt=""> -->
+    <!-- <img src="assets/images/menu.png" alt=""> -->
+  </ion-col>
+  <ion-col size="7.5" class="m-auto">
+    <ion-title>
+      {{"Notifications" | translate}}
+    </ion-title>
+  </ion-col>
+  <ion-col size="1.5" class="m-auto text-center">
+    <!-- <ion-icon name="filter" routerLink="/advance-filter"></ion-icon> -->
+  </ion-col>
+</ion-row>
+
+<ion-content>
+  <app-empty-layout *ngIf="!isLoading && notifications.length < 1"></app-empty-layout>
+  <app-loading *ngIf="isLoading"></app-loading>
+  <ion-row class="mt10 ion-justify-content-center">
+    <ion-col size="12" *ngFor="let item of notifications">
+      <div class="emp-item cblack  d-flex flex-direction-column">
+        <!-- <ion-icon name="heart" class="fav-icon"></ion-icon> -->
+        <!-- <img *ngIf="item.fav != 1" (click)="addToFav(item)" src="assets/images/fav-heart.png" class="fav-icon"
+          width="30px" alt="">
+        <img *ngIf="item.fav > 0" (click)="addToFav(item)" src="assets/images/fav-heart-red.png" class="fav-icon"
+          width="30px" alt=""> -->
+
+        <ion-row class="info-container list touch-opacity">
+
+          <ion-col size="4">
+            <img src="{{item.image}}"
+              onerror="this.src = 'assets/images/image-placeholder.jpeg'" alt="" class="worker-img-list">
+          </ion-col>
+          <ion-col size="8">
+            <h6 class="MyriadPro-Bold cblack m0 pt10 w100">{{item.lang_name}}</h6>
+            <div class="emp-info">
+              <!-- <ion-label class="MyriadPro-Regular">{{"Religion" | translate}} : {{item.en_religion}}</ion-label> -->
+              <h5 class="m0 p0 MyriadPro-Regular">{{item.notification_title}}
+              </h5>
+              <p class="m0 p0 MyriadPro-Regular">{{item.description}}</p>
+              <p class="m0 p0 MyriadPro-Regular">{{item.created_at}}</p>
+              <!-- {{item.age}} {{"years old" | translate}} -->
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-col>
+  </ion-row>
+  <!-- <div>
+    <ion-row class="mt10 ion-justify-content-center">
+      
+      <ion-col size="5.6" *ngFor="let item of list">
+        <div class="emp-item cblack  d-flex flex-direction-column">
+          <img *ngIf="item.fav != 1" (click)="addToFav(item)" src="assets/images/fav-heart.png" class="fav-icon"
+            width="30px" alt="">
+          <img *ngIf="item.fav > 0" (click)="addToFav(item)" src="assets/images/fav-heart-red.png" class="fav-icon"
+            width="30px" alt="">
+
+          <img (click)="goToWorkerDetail(item)" src="{{appUrl + item.image}}"
+            onerror="this.src = 'assets/images/image-placeholder.jpeg'" alt="" class="worker-img">
+          <ion-row class="info-container" (click)="goToWorkerDetail(item)">
+            <ion-col>
+              <h6 class="MyriadPro-Bold cblack m0 ion-text-center w100">{{item.lang_name}}</h6>
+              <div class="emp-info">
+                <ion-label class="MyriadPro-Regular">{{item.en_religion}}</ion-label>
+                <p class="m0 p0 MyriadPro-Regular">{{item.place_of_living}} | {{item.age}} {{"years old" | translate}}
+                </p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </div> -->
+
+</ion-content>

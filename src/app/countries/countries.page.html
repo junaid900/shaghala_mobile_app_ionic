@@ -1,0 +1,24 @@
+<ion-row class="header"></ion-row>
+<ion-row style="background: #7f132a;" class="d-flex justify-content-center align-items-center">
+  <ion-col size="1" >
+    <img src="assets/images/back.png" (click)="goBack()" alt="">
+  </ion-col>
+  <ion-col>
+    <ion-title class="p0 cwhite">Select Country</ion-title>
+  </ion-col>
+</ion-row>
+<ion-content>
+ 
+  <div class="w100 h100" *ngIf="isLoading">
+    <app-loading></app-loading>
+  </div>
+  <ion-list>
+    <ion-item button *ngFor="let item of countries; let i = index" (click)="selectCountry(item,i)">
+      <ion-label>
+        (+{{item.phonecode}}) - {{item.name}}
+      </ion-label>
+      <ion-icon *ngIf="selectedCountry.country_id == item.country_id" class="check-icon" name="checkmark-done-outline" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,27 @@
+.heading{
+    color: #7F132A;
+    text-align: center;
+}
+.payment{
+    padding: 30px;
+    ion-row{
+        ion-col{
+            height: 70px;
+            display: flex;
+            // align-items: ;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+}
+.ac-no{
+    font-size: 12px;
+    color: #6C7480;
+}
+.payment-item{
+    border-radius: 10px;
+    border:#6C7480 solid;
+    img{
+        // margin-top: 4px;
+    }
+}

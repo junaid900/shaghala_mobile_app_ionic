@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>102537792344-bp2okqigii8nro7quekaqqrlmlb0896f.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.102537792344-bp2okqigii8nro7quekaqqrlmlb0896f</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>102537792344-am1q9k2sf855gbvofbqbn9mth4tgs9nj.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBZsvbT08qqMQYuSJ2HIu_TixC8t3m90FU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>102537792344</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mjcoders.shkalah</string>
+	<key>PROJECT_ID</key>
+	<string>shkalah-6697c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>shkalah-6697c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:102537792344:ios:2d670001570d9dd356732d</string>
+	<key>DATABASE_URL</key>
+	<string>https://shkalah-6697c-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

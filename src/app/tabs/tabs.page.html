@@ -1,0 +1,48 @@
+<ion-tabs>
+  <div class="payment-overlay" *ngIf="subDialog">
+    <ion-row class="payment-overlay-row">
+      <ion-col size="12">
+        <h3 class="p0 m0">Warning!</h3>
+      </ion-col>
+      <ion-col size="12" class="pt0">
+        <p class="p0 m0">Subscribe to publish your ads.</p>
+      </ion-col>
+      <ion-col>
+        <ion-button size="small" (click)="hideDialog()">
+          Close
+        </ion-button>
+        <ion-button size="small" (click)="goToPayment()">
+          Subscribe
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <!-- Tabs -->
+  <ion-tab-bar slot="bottom" style="--background: #7F132A;height: 60px;">
+
+    <ion-tab-button tab="tab2">
+      <img style="color: white;" src="assets/images/home.png" alt="" />
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab1">
+      <img src="assets/images/favourite.png" alt="">
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3">
+      <img src="assets/images/people_2.png" style="height: 38px;" alt="">
+    </ion-tab-button>
+    <ion-tab-button tab="tab4">
+      <img src="assets/images/company.png" style="height: 34px;" alt="">
+    </ion-tab-button>
+    <ion-tab-button tab="tab5">
+      <div>
+        <div class="notification-count" *ngIf="notifications > 0">{{notifications}}</div>
+        <img src="assets/images/notification.png" style="height: 34px;" alt="">
+      </div>
+    </ion-tab-button>
+    <!-- <ion-tab-button tab="tab4">
+      <img src="assets/images/menu_2.png" alt="">
+    </ion-tab-button> -->
+  </ion-tab-bar>
+
+</ion-tabs>

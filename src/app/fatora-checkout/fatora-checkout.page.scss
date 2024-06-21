@@ -1,0 +1,66 @@
+.heading{
+    color: #419799;
+    text-align: center;
+}
+.payment{
+    // padding: 30px;
+    ion-row{
+        ion-col{
+            height: 70px;
+            display: flex;
+            // align-items: ;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+}
+.ac-no{
+    font-size: 12px;
+    color: #6C7480;
+}
+.payment-item{
+    border-radius: 10px;
+    border:#6C7480 solid;
+    img{
+        // margin-top: 4px;
+    }
+}
+.submit-button {
+    margin-top: 10px;
+    background: linear-gradient(180deg, #7f132a 40%, rgba(201, 2, 105, 1) 100%);
+    margin: 0px;
+    --border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0;
+    height: 28px;
+    // width: 100px;
+}
+.form-container {
+    font-size: 14px;
+    color: #7f132a;
+    padding: 0px 28px 0px 28px;
+    .input{
+        color: #6c7480;
+        border: #707070 solid;
+        border-radius: 4px;
+        font-size: 13px;
+        margin-top: 2px;
+        // height: 30px;
+    }
+    ion-input {
+        color: #6c7480;
+        border: #707070 solid;
+        border-radius: 4px;
+        font-size: 13px;
+        margin-top: 2px;
+        height: 30px;
+    }
+    ion-select {
+        color: #9cb9e4;
+        border: #707070 solid;
+        border-radius: 4px;
+        font-size: 13px;
+        margin-top: 2px;
+        height: 30px;
+    }
+}

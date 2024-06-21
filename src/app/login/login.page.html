@@ -1,0 +1,66 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-row class="header"></ion-row>
+
+<ion-content>
+  <!-- <div>
+  </div> -->
+  <div class="login-root">
+    <div class="top-layout">
+      <div class="app-bar-content">
+        <div class="btn-skip" (click)="skip()">{{"Skip" | translate}}</div>
+        <div class="toggle-container">
+          <ion-toggle [(ngModel)]="lang" (ngModelChange)="changeLang($event)">
+          </ion-toggle>
+        </div>
+
+      </div>
+      <div class="heading">
+        <div class="welcome">
+          <h2>{{"WELCOME!" | translate}}</h2>
+        </div>
+        <div class="app-heading">
+          <h1>{{"Shaghala" | translate}}</h1>
+        </div>
+      </div>
+      <div class="logo-container">
+        <div class="logo-img">
+          <img src="assets/images/app_login_logo.png" alt="Shkalah">
+        </div>
+      </div>
+    </div>
+    <div class="bottom-layout">
+      <div class="login-form-container">
+        <div class="input-container">
+          <ion-input [(ngModel)]="username" placeholder="{{'Email' | translate}}"></ion-input>
+        </div>
+        <div class="input-container">
+          <ion-input type="password" [(ngModel)]="password" placeholder="{{'Password' | translate}}"></ion-input>
+        </div>
+        <div class="btn-container">
+          <ion-button size="small" (click)="login()" color="none">{{"Log In" | translate}}</ion-button>
+        </div>
+      </div>
+      <div class="signup-with-container mt6 d-flex justify-content-center align-items-center">
+        <img class="mr10 login-icon-img" width="44px" src="assets/images/facebook.png" alt="" (click)="signupWithFB()">
+        <img width="44px" class="mt2 mr8 login-icon-img" src="assets/images/email.png" (click)="signupWithGoogle()" alt="">
+        <img width="44px" *ngIf="showAppleSignIn"  class="mt2 login-icon-img" src="assets/images/apple.png" style="margin-left: 4px;" (click)="signupWithApple()" alt="">
+      </div>
+      <div class="fs-container">
+        <div class="forget-password-container">
+          <ion-label class="txt-forget-password" routerLink="/reset-password">{{"Forgot Password?" | translate}}</ion-label>
+        </div>
+        <div class="new-signup-container">
+          <ion-label class="txt-new-signup">
+            {{"Don't have account?" | translate}} <span class="txt-signup" (click)="goToSignup()">{{"Sign Up" | translate}}</span>
+          </ion-label>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</ion-content>

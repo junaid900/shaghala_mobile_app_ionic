@@ -1,0 +1,177 @@
+<ion-row class="header pt6">
+  <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/menu.png" alt="">
+    <!-- <img src="assets/images/menu.png" alt=""> -->
+  </ion-col>
+  <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/back.png" (click)="goBack()" alt="">
+    <!-- <img src="assets/images/menu.png" alt=""> -->
+  </ion-col>
+  <ion-col size="7.5" class="m-auto">
+    <!-- <ion-title>
+        Tab 2
+      </ion-title> -->
+  </ion-col>
+  <ion-col size="1.5" class="m-auto text-center">
+    <!-- <img src="assets/images/setting.png" alt=""> -->
+  </ion-col>
+</ion-row>
+<ion-content>
+  <div *ngIf="isLoading" class="d-flex ion-justify-content-center ion-align-items-center w100 h100">
+    <ion-spinner color="primary" name="crescent"></ion-spinner>
+  </div>
+  <div class="add_worker_page" *ngIf="!isLoading">
+    <ion-row>
+      <ion-col size="4">
+        <img style="border: black solid;border-radius: 100px; object-fit: contain;" (click)="takeImage()"
+          src="{{baseImage}}" onerror="this.src='assets/images/add_worker_profile.png'" width="100px" height="100px"
+          alt="">
+      </ion-col>
+      <ion-col size="2">
+
+      </ion-col>
+      <ion-col size="6">
+        <ion-row style="height:20%">
+          <ion-col class="ion-text-center btn-upload-container">
+            <ion-button (click)="selectCV()" color="none" class="btn-upload-cv cwhite">
+              {{"Upload CV" | translate}}
+            </ion-button>
+            <input type="file" id="cv-input-field" accept="application/pdf" hidden (change)="changeCV($event)">
+            <p></p>
+            <div *ngIf="cvFile == null">
+              <p class="m0">{{"ZIP OR PDF FILE" | translate}}</p>
+              <p class="m0">{{"(SOME INSTRUCTIONS WILL BE WRITTEN)" | translate}}</p>
+            </div>
+            <div *ngIf="cvFile != null">
+              <p class="m0">{{cvFile.name}}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+    <div class="form-container">
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>{{"ADVERTISEMENT TYPE" | translate}}</ion-label>
+          <!-- <ion-input (ionFocus)="focusInput($event)" placeholder="{{'Admission or sponsorship transmission' | translate}}"></ion-input> -->
+          <ion-select [(ngModel)]="formData.advs_type"
+            placeholder="{{'Admission or sponsorship transmission' | translate}}">
+            <ion-select-option value="admission">{{"Admission" | translate}}</ion-select-option>
+            <ion-select-option value="sponsored">{{"Sponsorship transmission" | translate}}</ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"ENGLISH NAME" | translate}}</ion-label>
+          <ion-input (ionFocus)="focusInput($event)" [(ngModel)]="formData.en_name" placeholder="Jhon"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"ARABIC NAME" | translate}}</ion-label>
+          <ion-input (ionFocus)="focusInput($event)" [(ngModel)]="formData.ar_name" placeholder="Arabic"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"MOBILE NUMBER" | translate}}</ion-label>
+          <ion-input (ionFocus)="focusInput($event)" type = 'number' [(ngModel)]="formData.phone" placeholder="+44 558 257 68 005"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"SALARY" | translate}}</ion-label>
+          <ion-input (ionFocus)="focusInput($event)" type="number" [(ngModel)]="formData.salary" placeholder="10000"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"RELIGION" | translate}}</ion-label>
+          <ion-select [(ngModel)]="formData.en_religion" placeholder="Select an option">
+            <ion-select-option *ngFor="let item of pageData.religion" value="{{item}}">{{item}}</ion-select-option>
+          </ion-select>
+          <!-- <ion-input (ionFocus)="focusInput($event)" [(ngModel)]="formData.en_religion" placeholder=" Muslim - Christian - Other (write)"></ion-input> -->
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"ARABIC LEVEL" | translate}}</ion-label>
+          <ion-select [(ngModel)]="formData.arabic_level" placeholder="Select an option">
+            <ion-select-option value="Excellent">{{"Excellent" | translate}}</ion-select-option>
+            <ion-select-option value="Moderate">{{"Moderate" | translate}}</ion-select-option>
+            <ion-select-option value="No">{{"No " | translate}}</ion-select-option>
+          </ion-select>
+          <!-- <ion-input (ionFocus)="focusInput($event)" [(ngModel)]="formData.arabic_level" placeholder="(excellent-moderateweek-no)"></ion-input> -->
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"AGE" | translate}}</ion-label>
+          <ion-input (ionFocus)="focusInput($event)" [(ngModel)]="formData.age" type="number" placeholder="(number)"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"MARRIED" | translate}}</ion-label>
+          <ion-select [(ngModel)]="formData.is_married" placeholder="Select an option">
+            <ion-select-option value="Yes">{{"Yes" | translate}}</ion-select-option>
+            <ion-select-option value="No">{{"No" | translate}}</ion-select-option>
+          </ion-select>
+          <!-- <ion-input (ionFocus)="focusInput($event)" placeholder="Admission or sponsorship transmission"></ion-input> -->
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"HAVE CHILDREN" | translate}}</ion-label>
+          <ion-input (ionFocus)="focusInput($event)" [(ngModel)]="formData.no_of_childs" type="number" placeholder="(Number if Yes)"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"EXPERIENCE" | translate}}</ion-label>
+          <ion-input (ionFocus)="focusInput($event)" type="number" [(ngModel)]="formData.experience" placeholder="(number) years"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"EDUCATION" | translate}}</ion-label>
+          <ion-select [(ngModel)]="formData.edu_id" placeholder="Select an option">
+            <ion-select-option *ngFor="let edu of pageData.education" value="{{edu.edu_id}}">{{edu.en_degree}}
+            </ion-select-option>
+          </ion-select>
+          <!-- <ion-input (ionFocus)="focusInput($event)" placeholder="Admission or sponsorship transmission"></ion-input> -->
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"SKIN COLOR"|translate}}</ion-label>
+          <ion-input (ionFocus)="focusInput($event)" [(ngModel)]="formData.skin_color" placeholder="(Text) Fair"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"TALL" | translate}}</ion-label>
+          <ion-input (ionFocus)="focusInput($event)" type = "number" [(ngModel)]="formData.height" placeholder="(number) cm"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"WEIGHT"| translate}}</ion-label>
+          <ion-input (ionFocus)="focusInput($event)" type="number" [(ngModel)]="formData.weight" placeholder="(number) kg"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"PLACE OF BIRTH" | translate}}</ion-label>
+          <ion-select [(ngModel)]="formData.place_of_birth_id" placeholder="(choose country)">
+            <ion-select-option *ngFor="let cont of pageData.countries" value="{{cont.country_id}}">{{cont.name}}
+              ({{cont.sortname}})</ion-select-option>
+            <!-- <ion-select-option>UAE</ion-select-option> -->
+          </ion-select>
+          <!-- <ion-input (ionFocus)="focusInput($event)" placeholder="(number) kg"></ion-input> -->
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"PLACE OF LIVING" | translate}}</ion-label>
+          <ion-select [(ngModel)]="formData.place_of_living_id" placeholder="(choose country)">
+            <ion-select-option *ngFor="let cont of pageData.countries" value="{{cont.country_id}}">{{cont.name}}
+              ({{cont.sortname}})</ion-select-option>
+            <!-- <ion-select-option>UAE</ion-select-option> -->
+          </ion-select>
+          <!-- <ion-input (ionFocus)="focusInput($event)" placeholder="(number) kg"></ion-input> -->
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"WORKS CAN DO" | translate}}</ion-label>
+          <ion-select multiple [(ngModel)]="formData.skill_id" placeholder="(list to choose from)">
+            <ion-select-option *ngFor="let item of pageData.skills" value={{jsonData(item)}}>{{item.en_name}}</ion-select-option>
+          </ion-select>
+          <!-- <ion-input placeholder="(number) kg"></ion-input> -->
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>{{"REMARKS" | translate}}</ion-label>
+          <ion-textarea (ionFocus)="focusInput($event)" class="input" [(ngModel)]="formData.remarks" placeholder="(Long Text)"></ion-textarea>
+        </ion-col>
+        <ion-col size="12" class="ion-text-center">
+          <ion-button (click)="submit()" class="submit-button" color="none">
+            <ion-label class="cwhite">{{"SAVE CHANGES" | translate}}</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </div>
+
+  </div>
+ 
+
+</ion-content>

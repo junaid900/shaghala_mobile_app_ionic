@@ -1,0 +1,53 @@
+<ion-row class="header pt6">
+  <!-- <ion-col size="1.5" class="text-center m-auto">
+  </ion-col> -->
+  <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/back.png" (click)="goBack()" alt="">
+    <!-- <img src="assets/images/menu.png" alt=""> -->
+  </ion-col>
+  <ion-col size="7.5" class="m-auto">
+    <ion-title>
+      Fatora
+    </ion-title>
+  </ion-col>
+  <ion-col size="1.5" class="m-auto text-center">
+    <!-- <img src="assets/images/setting.png" alt=""> -->
+  </ion-col>
+</ion-row>
+<ion-content>
+  <h3 class="heading">Price: {{amount}} QAR</h3>
+  <!-- <form id="payment-form"> -->
+  <div class="w100 ion-text-center mt10">
+    <img src="assets/images/fatora-logo.png" width="40%" style="object-fit: contain;" />
+
+  </div>
+  <div class="form-container">
+    <ion-col size="12">
+      <ion-label>{{"Name" | translate}}</ion-label>
+      <ion-input [(ngModel)]="formData.name" type="text" placeholder="client"></ion-input>
+    </ion-col>
+    <ion-col size="12">
+      <ion-label>{{"Email" | translate}}</ion-label>
+      <ion-input [(ngModel)]="formData.email" type="email" placeholder="client@domain.com"></ion-input>
+    </ion-col>
+    <ion-col size="12">
+      <ion-label>{{"Phone" | translate}}</ion-label>
+      <ion-input [(ngModel)]="formData.phone" type="text" placeholder="+97477777777"></ion-input>
+    </ion-col>
+  </div>
+  <div class="payment p0">
+    <!-- <div id="card-element">
+    </div>
+    <div id="card-errors" role="alert"></div>
+    <p></p> -->
+    <div class="w100 d-flex justify-content-center">
+      <button class="mt10" style="height: 30px;width: 100px;
+        background-color: #419799; color: white; border-radius: 10px;" (click)="generatePayment()">Pay</button>
+    </div>
+  </div>
+  <!-- <div>
+    {{params}}
+  </div> -->
+  <!-- </form> -->
+
+</ion-content>

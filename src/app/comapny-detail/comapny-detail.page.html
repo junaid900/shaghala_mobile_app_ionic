@@ -1,0 +1,104 @@
+<ion-row class="header pt6">
+  <!-- <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/menu.png" alt="">
+  </ion-col> -->
+  <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/back.png" (click)="goBack()" alt="">
+    <!-- <img src="assets/images/menu.png" alt=""> -->
+  </ion-col>
+  <ion-col size="7.5" class="m-auto">
+    <!-- <ion-title>
+        Tab 2
+      </ion-title> -->
+  </ion-col>
+  <ion-col size="1.5" class="m-auto text-center">
+    <!-- <img src="assets/images/setting.png" alt=""> -->
+  </ion-col>
+</ion-row>
+
+<ion-content>
+  <div class=" top-container">
+  </div>
+  <div class="worker-detail-page">
+    <ion-row>
+      <ion-col size="4" class="profile-col p0">
+        <img class="profile-image" src="{{appUrl + company.user_image}}"
+          onerror="this.src = 'assets/images/image-placeholder.jpeg'" alt="">
+      </ion-col>
+      <ion-col size="7" class="p0 pl10 profile-head-container">
+        <ion-row>
+          <ion-col size="12">
+            <ion-row class="ion-justify-content-end btn-contact">
+              <ion-col size="2" class="contact-btn" (click)="shareApp()">
+                <!-- <ion-button size="small"> -->
+                <img src="assets/images/share.png" alt="">
+                <!-- </ion-button> -->
+              </ion-col>
+              <ion-col size="1"></ion-col>
+              <ion-col size="2" *ngIf="user.type != 'local'" class="contact-btn" (click)="numberCall()">
+                <img src="assets/images/phone.png" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <h3 class="cwhite oneline-elipsize MyriadPro-Bold p0 m0">{{company.name}}</h3>
+        <p class="p0 m0 cwhite MyriadPro-Regular oneline-elipsize">{{company.address}}</p>
+        <!-- <p class="p0 m0 cwhite MyriadPro-Regular oneline-elipsize">{{worker.place_of_living}}</p> -->
+      </ion-col>
+    </ion-row>
+    <div>
+      <ion-row>
+        <ion-col size="12">
+          <div class="main-detail-container">
+            <ion-row>
+              <ion-col>
+                <ion-label>{{"Status" | translate}}</ion-label>
+                <p class="p0 m0" style="color: green;">{{company.admin_status == 'Active' ? 'Verified':'Not Verified'}}</p>
+              </ion-col>
+              <ion-col *ngIf="user.type != 'local'">
+                <ion-label>{{"Phone" | translate}}</ion-label>
+                <p class="p0 m0">+{{company.phone.replace("-",'')}}</p>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2 class="cblack">
+            {{"Workers" | translate}}
+          </h2>
+        </ion-col>
+        <ion-col size="12">
+          <ion-row>
+            <ion-col size="5.6" *ngFor="let item of list">
+              <div class="emp-item cblack  d-flex flex-direction-column">
+                <!-- <ion-icon name="heart" class="fav-icon"></ion-icon> -->
+                <img *ngIf="item.fav != 1" (click)="addToFav(item)" src="assets/images/fav-heart.png" class="fav-icon"
+                  width="30px" alt="">
+                <img *ngIf="item.fav > 0" (click)="addToFav(item)" src="assets/images/fav-heart-red.png" class="fav-icon"
+                  width="30px" alt="">
+      
+                <img (click)="goToWorkerDetail(item)" src="{{appUrl + item.image}}"
+                  onerror="this.src = 'assets/images/image-placeholder.jpeg'" alt="" class="worker-img">
+                <ion-row class="info-container" (click)="goToWorkerDetail(item)">
+                  <ion-col>
+                    <h6 class="MyriadPro-Bold cblack m0 ion-text-center w100">{{item.lang_name}}</h6>
+                    <div class="emp-info">
+                      <ion-label class="MyriadPro-Regular">{{item.en_religion}}</ion-label>
+                      <p class="m0 p0 MyriadPro-Regular">{{item.place_of_living}} | {{item.age}} {{"years old" | translate}}
+                      </p>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+
+    </div>
+
+  </div>
+</ion-content>

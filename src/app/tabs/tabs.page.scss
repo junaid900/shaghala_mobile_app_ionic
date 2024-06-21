@@ -1,0 +1,34 @@
+ion-tab-button {
+   img {
+        height: 30px;
+        color: #707070;
+        filter:  brightness(0) invert(1);
+        // filter: drop-shadow
+    }
+} 
+.payment-overlay {
+    position: absolute;
+    width: 100%;
+    
+}
+.payment-overlay-row{
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background: #c5193ec0;
+    color: white;
+}
+
+.notification-count{
+    width: 20px;
+    background-color: #fe0037;
+    border-radius: 100px;
+    padding-top: 2px;
+    color: white;
+    font-size: 10px;
+    height: 20px;
+    font-weight: bolder;
+    position: absolute;
+    z-index: 999;
+}

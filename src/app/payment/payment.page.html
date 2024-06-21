@@ -1,0 +1,73 @@
+<ion-row class="header pt6">
+  <!-- <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/menu.png" alt="">
+  </ion-col> -->
+  <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/back.png" (click)="goBack()" alt="">
+    <!-- <img src="assets/images/menu.png" alt=""> -->
+  </ion-col>
+  <ion-col size="7.5" class="m-auto">
+    <ion-title>
+      Payment Method
+    </ion-title>
+  </ion-col>
+  <ion-col size="1.5" class="m-auto text-center">
+    <!-- <img src="assets/images/setting.png" alt=""> -->
+  </ion-col>
+</ion-row>
+<ion-content>
+  <h3 class="heading">Payment Transfer</h3>
+  <div *ngIf="isSettingLoading" class="w100 h100 d-flex justify-content-center align-items-center">
+    <ion-spinner color="primary" name="dots"></ion-spinner>
+  </div>
+  <div *ngIf="!isSettingLoading">
+    <p class="p10 m0 cblack text-center" *ngIf="type == 'Company' && subType == 'annual'">{{settings.sub_amount}} {{"QAR"}} for annual subscription</p>
+    <p class="p10 m0 cblack text-center" *ngIf="type == 'Company' && subType == 'sami_annual'">{{settings.sami_sub_amount}} {{"QAR"}} for sami annual subscription</p>
+    <p class="p10 m0 cblack text-center" *ngIf="type == 'Individual' && subType == 'annual'">{{settings.individual_amount}} {{"QAR"}} for annual subscription</p>
+    <p class="p10 m0 cblack text-center" *ngIf="type == 'Individual' && subType == 'sami_annual'">{{settings.sami_individual_amount}} {{"QAR"}} for sami annual subscription</p>
+    <p class="p10 m0 cblack text-center" *ngIf="type == 'Reservation'">{{settings.individual_reservation_amount}} {{"QAR"}} for reservation</p>
+  </div>
+  <div class="payment" *ngIf="!isSettingLoading">
+    <!-- <div class="payment-item ion-activatable ripple-parent touch-opacity" (click)="toStripe()">
+      <ion-row>
+        <ion-col size="4" class="ion-align-items-center">
+          <img src="assets/images/stripe.jpeg" height="60px" width="60px" alt="">
+        </ion-col>
+        <ion-col size="8" class="ion-text-start">
+          <p class="ac-no m0">**** **** **** 4978</p>
+          <p class="ac-no m0">expires 10/24</p>
+        </ion-col>
+      </ion-row>
+      
+    </div> -->
+    <div class="mt10"></div>
+    <!-- <div class="payment-item ion-activatable ripple-parent touch-opacity" (click)="toPayPal()">
+      <ion-row>
+        <ion-col size="4" class="ion-align-items-center">
+          <img src="assets/images/paypal.jpeg" height="50px" width="80px" alt="">
+        </ion-col>
+        <ion-col size="8" class="ion-text-start">
+          <p class="ac-no m0">**** **** **** 4978</p>
+          <p class="ac-no m0">expires 10/24</p>
+        </ion-col>
+      </ion-row>
+    </div> -->
+    <div class="mt10"></div>
+    <div class="payment-item ion-activatable ripple-parent touch-opacity" (click)="toFatora()">
+      <ion-row>
+        <ion-col size="4" class="ion-align-items-center">
+          <img src="assets/images/fatora-logo.png" height="20px" width="80px" alt="">
+        </ion-col>
+        <ion-col size="8" class="ion-text-start">
+          <p class="ac-no m0">**** **** **** 4978</p>
+          <p class="ac-no m0">expires 10/24</p>
+        </ion-col>
+      </ion-row>
+      <!-- <ion-ripple-effect></ion-ripple-effect> -->
+    </div>
+    <!-- <div id="paypal-button-container"></div> -->
+
+
+  </div>
+
+</ion-content>

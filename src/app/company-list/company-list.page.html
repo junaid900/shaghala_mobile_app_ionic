@@ -1,0 +1,56 @@
+<ion-row class="header pt6">
+  <!-- <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/menu.png" alt="">
+  </ion-col> -->
+  <ion-col size="1.5" class="text-center m-auto">
+    <!-- <img src="assets/images/menu.png" alt="" (click)="openMenu()"> -->
+    <img src="assets/images/back.png" (click)="goBack()" alt="">
+  </ion-col>
+  <ion-col size="9" class="m-auto">
+    <ion-title *ngIf="!selectedType.type_name">
+      {{"Companies" | translate}}
+    </ion-title>
+    <ion-title *ngIf="selectedType.type_name">
+      {{lang == 'ar'? selectedType.type_name_ar :selectedType.type_name}}
+    </ion-title>
+  </ion-col>
+  <!-- <ion-col size="1.5" class="m-auto text-center">
+    <ion-icon name="filter" routerLink="/advance-filter"></ion-icon>
+  </ion-col> -->
+</ion-row>
+
+<ion-content>
+
+  <div>
+
+    <app-empty-layout style="width: 100%;" *ngIf="!isLoading && list.length < 1"></app-empty-layout>
+    <app-loading *ngIf="isLoading"></app-loading>
+    <ion-row class="mt10 ion-justify-content-center">
+      <ion-col size="12" *ngFor="let item of list" (click)="goToWorkerDetail(item)" class="touch-opacity">
+        <div class="emp-item cblack  d-flex flex-direction-column">
+          <ion-row class="info-container">
+            <ion-col size="4">
+              <img src="{{appUrl + item.user_image}}" onerror="this.src = 'assets/images/image-placeholder.jpeg'" alt=""
+                height="90px" class="worker-img">
+            </ion-col>
+            <ion-col size="8">
+              <ion-row>
+                <ion-col>
+                  <h6 class="MyriadPro-Bold cblack m0 w100">{{item.name}}</h6>
+                  <div class="emp-info">
+                    <!-- <ion-label class="MyriadPro-Regular">{{item.en_religion}}</ion-label> -->
+                    <p class="m0 p0 MyriadPro-Regular">{{item.email}}
+                    </p>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </div>
+
+</ion-content>

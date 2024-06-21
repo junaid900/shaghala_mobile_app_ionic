@@ -1,0 +1,76 @@
+.top-container {
+    background-color: #7f132a;
+    height: 120px;
+}
+.worker-detail-page {
+    position: relative;
+    top: -120px;
+    padding: 10px 10px 0px 10px;
+}
+.profile-image {
+    border-radius: 10px;
+    height: 130px;
+    width: 100%;
+    object-fit: cover;
+    border: #ffffff solid;
+    border-width: 4px;
+}
+.contact-btn {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    text-align: center;
+}
+.profile-head-container {
+    // position:relative;
+    margin-top: -10px;
+
+    // z-index: 99;
+}
+.main-detail-container ion-row{
+    padding: 10px;
+}
+.main-detail-container {
+    color: black;
+    background-color: #e6e7e8;
+    border-radius: 10px;
+    ion-col {
+        padding: 0px;
+        text-align: center;
+        border-right: #7f132a solid;
+        border-width: 2px;
+        font-size: 14px;
+        ion-label{
+            color: #7F132A;
+        }
+
+    }
+}
+.main-detail-container :last-child {
+    border-width: 0px;
+}
+.info-key{
+    font-size: 16px;
+    color: black;
+}
+.info-val{
+    color: #808285;
+    font-size: 16px;
+    font-family: "Poppins Regular";
+}
+.info-item{
+    border-bottom: #7f132a solid;
+    border-width: 1px;
+    font-family: "Poppins Regular";
+    padding-top: 10px;
+}
+.profile-col {
+}
+.btn-send{
+    margin-top: 20px;
+    background: #7F132A;
+    // width: 100%;
+    height: 30px;
+    font-family: "Poppins Black";
+}

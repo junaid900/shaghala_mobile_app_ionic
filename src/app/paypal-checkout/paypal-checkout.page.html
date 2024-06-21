@@ -1,0 +1,28 @@
+<ion-row class="header pt6">
+  <!-- <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/menu.png" alt="">
+  </ion-col> -->
+  <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/back.png" (click)="goBack()" alt="">
+    <!-- <img src="assets/images/menu.png" alt=""> -->
+  </ion-col>
+  <ion-col size="7.5" class="m-auto">
+    <ion-title>
+      Paypal
+    </ion-title>
+  </ion-col>
+  <ion-col size="1.5" class="m-auto text-center">
+    <!-- <img src="assets/images/setting.png" alt=""> -->
+  </ion-col>
+</ion-row>
+<ion-content>
+  <h3 class="heading">Price {{amount}} USD</h3>
+  <div class="payment">
+
+
+    <div id="paypal-button-container"></div>
+
+
+  </div>
+
+</ion-content>

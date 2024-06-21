@@ -1,0 +1,38 @@
+ion-content{
+    --background: white;
+}
+.header{
+    background:#7F132A;
+    color:white;   
+}
+.top-container{
+    background-color: #7F132A;
+    height:100px;
+}
+.main-container{
+    background-color: #F1F2F2;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+    top: -100px;
+    color: black;
+    padding-top: 10px;
+}
+.txt-prof-complete{
+    color: #72BE52;
+    font-size: 14px;
+}
+.txt-name{
+    font-family:"Poppins SemiBold";
+    font-size: 28px;
+    color: #7F132A;
+    line-height: 28px;
+}
+ion-item-divider{
+    --background: transparent;
+    --ion-border-color: #7F132A;
+    padding-left: 0;
+    font-size: 15px;
+    color: black;
+}

@@ -1,0 +1,388 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url("assets/fonts/Montserrat-Bold.otf"); //mine
+}
+@font-face {
+    font-family: "MyriadPro Regular";
+    src: url("assets/fonts/MyriadPro-Regular.otf"); //mine
+}
+@font-face {
+    font-family: "MyriadPro SemiboldIt";
+    src: url("assets/fonts/MyriadPro-SemiboldIt.otf"); //mine
+}
+@font-face {
+    font-family: "MyriadPro Bold";
+    src: url("assets/fonts/MYRIADPRO-BOLD.OTF"); //mine
+}
+@font-face {
+    font-family: "Poppins Black";
+    src: url("assets/fonts/Poppins-Black.otf"); //mine
+}
+@font-face {
+    font-family: "Poppins Medium";
+    src: url("assets/fonts/Poppins-Medium.otf"); //mine
+}
+@font-face {
+    font-family: "Poppins Regular";
+    src: url("assets/fonts/Poppins-Regular.otf"); //mine
+}
+@font-face {
+    font-family: "Poppins SemiBold";
+    src: url("assets/fonts/Poppins-SemiBold.otf"); //mine
+}
+@font-face {
+    font-family: "Roboto Light";
+    src: url("assets/fonts/Roboto-Light.ttf"); //mine
+}
+@font-face {
+    font-family: "Roboto Medium";
+    src: url("assets/fonts/Roboto-Medium.ttf"); //mine
+}
+
+* {
+    font-family: "Poppins Regular";
+}
+.roboto-light {
+    font-family: "Roboto Light";
+}
+.montserrat-bold {
+    font-family: "Montserrat-Bold";
+}
+.myriadPro-semiboldIt {
+    font-family: "MyriadPro SemiboldIt";
+}
+.MyriadPro-Bold {
+    font-family: "MyriadPro Bold";
+}
+.MyriadPro-Regular {
+    font-family: "MyriadPro Regular";
+}
+.Poppins-SemiBold {
+    font-family: "Poppins SemiBold";
+}
+.d-flex {
+    display: flex;
+}
+.align-items-center {
+    align-items: center;
+}
+.align-items-start {
+    align-content: flex-start;
+}
+.align-items-end {
+    align-content: flex-end;
+}
+.align-items-space-arround {
+    align-content: space-around;
+}
+.align-items-space-between {
+    align-content: space-between;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.justify-content-start {
+    justify-content: start;
+}
+.justify-content-end {
+    justify-content: end;
+}
+.justify-content-space-between {
+    justify-content: space-between;
+}
+.justify-content-space-arround {
+    justify-content: space-around;
+}
+.flex-direction-column {
+    flex-direction: column;
+}
+.text-center {
+    text-align: center;
+}
+.ion-accordion-toggle-icon {
+    display: none !important;
+}
+ion-content {
+    --background: white;
+}
+.header {
+    background: #7f132a;
+    color: white;
+}
+.cblack {
+    color: black;
+}
+.cwhite {
+    color: white;
+}
+.mt0 {
+    margin-top: 0px !important;
+}
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt8 {
+    margin-top: 8px;
+}
+.mt6 {
+    margin-top: 6px;
+}
+.mt4 {
+    margin-top: 4px;
+}
+.mt2 {
+    margin-top: 2px;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.mb8 {
+    margin-bottom: 8px;
+}
+.mb6 {
+    margin-bottom: 6px;
+}
+.mb4 {
+    margin-bottom: 4px;
+}
+.mb2 {
+    margin-bottom: 2px;
+}
+.ml10 {
+    margin-left: 10px;
+}
+.ml8 {
+    margin-left: 8px;
+}
+.ml6 {
+    margin-left: 6px;
+}
+.ml4 {
+    margin-left: 4px;
+}
+.ml2 {
+    margin-left: 2px;
+}
+.mr10 {
+    margin-right: 10px;
+}
+.mr8 {
+    margin-right: 8px;
+}
+.mr6 {
+    margin-right: 6px;
+}
+.mr4 {
+    margin-right: 4px;
+}
+.mr2 {
+    margin-right: 2px;
+}
+.m0 {
+    margin: 0px;
+}
+.p0 {
+    padding: 0px;
+}
+.p8 {
+    padding: 8px;
+}
+.pt0 {
+    padding-top: 0px;
+}
+.pb0 {
+    padding-bottom: 0px;
+}
+.pr0 {
+    padding-right: 0px;
+}
+.pl0 {
+    padding-left: 0px;
+}
+.pr10 {
+    padding-right: 10px;
+}
+.pt10 {
+    padding-top: 10px;
+}
+.pt8 {
+    padding-top: 8px;
+}
+.pt6 {
+    padding-top: 6px;
+}
+.pt4 {
+    padding-top: 4px;
+}
+.pb10 {
+    padding-bottom: 10px;
+}
+.pl10 {
+    padding-left: 10px;
+}
+.w100 {
+    width: 100%;
+}
+.h100 {
+    height: 100%;
+}
+.w90 {
+    width: 90%;
+}
+.w80 {
+    width: 80%;
+}
+.w70 {
+    width: 70%;
+}
+.f10 {
+    font-size: 10px;
+}
+.f12 {
+    font-size: 12px;
+}
+.f14 {
+    font-size: 14px;
+}
+.f16 {
+    font-size: 16px;
+}
+.f18 {
+    font-size: 18px;
+}
+.f20 {
+    font-size: 20px;
+}
+.f22 {
+    font-size: 22px;
+}
+.p-auto {
+    padding: auto;
+}
+.m-auto {
+    margin: auto;
+}
+.app-button {
+    margin-top: 10px;
+    background: linear-gradient(180deg, #7f132a 40%, rgba(201, 2, 105, 1) 100%);
+    margin: 0px;
+    --border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0;
+    height: 28px;
+    width: 100px;
+}
+.btn-container ion-button {
+    margin-top: 10px;
+    background: linear-gradient(180deg, #7f132a 40%, rgba(201, 2, 105, 1) 100%);
+    margin: 0px;
+    --border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0;
+    height: 28px;
+    width: 100px;
+}
+.btn-outline {
+    margin-top: 10px;
+    background: white;
+    margin-bottom: 10px;
+    margin: 0px;
+    --border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0;
+    width: 100px;
+    // height: 25px;
+}
+.touch-opacity :active {
+    opacity: 0.5;
+}
+.vertical-align-middle {
+    vertical-align: middle;
+}
+.oneline-elipsize {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ion-select::part(icon) {
+    color: #7f132a !important;
+    content: url("assets/images/select-icon.png");
+    padding-right: 10px;
+    height: 8px;
+    width: 14px;
+
+    // content: url("../../assets/images/select-icon.png");
+}
+.slider {
+    --bullet-background-active: #7f132a;
+}
+.bgwhite {
+    background: white;
+}
+//   }
+.footer-md::before {
+    display: none;
+}
+input:focus-visible {
+    outline: 0px;
+}
+.toaster {
+    // --opacity: .8;
+    // --backgound: #000000c7;
+}
+.ion-page {
+    padding: var(--ion-safe-area-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
+}
+body.app-ts-mobile {
+    margin-top: 20px; // fallback for no safe area support
+    margin-top: constant(safe-area-inset-top); // iOS 11
+    margin-top: env(safe-area-inset-top); // iOS 11.2+
+}
+
+body.app-ts-mobile.app-android-safe-area {
+    margin-top: 20px;
+}
+.header{
+    padding-top: 30px;
+}
+.hr{
+    border-bottom: solid rgb(190, 190, 190);
+    height: 1px;
+    width: 100%;
+    margin: 6px 0px 6px 0px;
+}
+ion-popover {
+    --width: 100%;
+    // --height: 100%;
+}
+.otp-pop{
+    --width: 100%;
+    --height: 100%;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Shkalah",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

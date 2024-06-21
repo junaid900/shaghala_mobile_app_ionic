@@ -1,0 +1,169 @@
+.login-root {
+    background: #ffffff;
+    height: 100%;
+}
+ion-content {
+    --background: #ffffff;
+}
+.top-layout {
+    background: linear-gradient(180deg, #7f132a 40%, rgba(201, 2, 105, 1) 100%);
+    .app-bar-content {
+        display: flex;
+        align-items: center;
+        padding: 20px 10px 0px 10px;
+        justify-content: space-between;
+
+        .btn-skip {
+            color: rgb(0, 0, 0);
+            background-color: #eec626;
+            font-size: 12px;
+            border-radius: 6px;
+            padding: 2px 8px 2px 8px;
+        }
+        .toggle-container {
+            border-radius: 20px;
+            box-shadow: 2px 3px 6px #000000b8;
+            height: 18px;
+        }
+
+        ion-toggle {
+            width: 46px;
+            padding: 0px;
+
+            // margin-bottom: 6px;
+            position: relative;
+            color: rgb(0, 0, 0);
+            font-size: 15px;
+            height: 20px;
+            line-height: 31px;
+            zoom: 0.9;
+
+            --handle-box-shadow: 0px;
+            --handle-spacing: 3px;
+            --handle-height: 14px;
+            --handle-width: 14px;
+            --background: #ffffff;
+            --background-checked: #ffffff;
+            --handle-background: #8dc63f;
+            --handle-background-checked: #8dc63f;
+        }
+
+        ion-toggle[aria-checked="false"] {
+            &::after {
+                position: absolute;
+                content: "Arb";
+                font-size: 12px;
+                top: -6px;
+                right: 5px;
+            }
+        }
+
+        ion-toggle[aria-checked="true"] {
+            &::after {
+                position: absolute;
+
+                font-size: 12px;
+                content: "Eng";
+                top: -6px;
+                left: 5px;
+            }
+        }
+    }
+    .heading {
+        text-align: center;
+        margin-top: 40px;
+        .welcome h2 {
+            margin-bottom: 0px;
+            color: #ffffff;
+        }
+        .app-heading h1 {
+            font-size: 38px;
+            margin-top: 4px;
+            font-family: "Montserrat Bold";
+            color: #ffffff;
+        }
+    }
+    .logo-container {
+        text-align: center;
+        line-height: 0px;
+        padding: 0px;
+        margin: 0px;
+        position: relative;
+        bottom: -20px;
+
+        // border-width: 20px;
+        .logo-img {
+            img {
+                margin-top: -10px;
+                width: 60%;
+                // margin-top: -1;
+                // border: #ffffff solid;
+                // border-width: 20px;
+            }
+        }
+    }
+}
+.bottom-layout {
+    margin-top: 40px;
+    .login-form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .input-container {
+            width: 70%;
+            margin-bottom: 10px;
+            ion-input {
+                color: black;
+                text-align: center;
+                font-size: 14px;
+                border: #6c7480 solid;
+                border-width: 1px;
+                border-radius: 4px;
+                --padding-start: 10px;
+            }
+        }
+        .btn-container ion-button {
+            margin-top: 10px;
+            background: linear-gradient(180deg, #7f132a 40%, rgba(201, 2, 105, 1) 100%);
+            margin: 0px;
+            --border-radius: 4px;
+            border-radius: 4px;
+            box-shadow: 0;
+        }
+    }
+    .fs-container {
+        margin-top: 30px;
+        .forget-password-container {
+            color: #019ad6;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: underline;
+            ion-label {
+                font-family: "Roboto Light";
+            }
+        }
+        .new-signup-container {
+            color: black;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 4px;
+            .txt-signup {
+                color: #019ad6;
+                text-decoration: underline;
+                font-family: "Roboto Light";
+
+            }
+            ion-label {
+                font-family: "Roboto Light";
+            }
+        }
+    }
+}
+.login-icon-img{
+    // border: solid 1px rgb(150, 150, 150);
+    padding: 7px;
+    border-radius: 10px;
+    opacity: .8;
+    background-color: #d4d4d4;
+}

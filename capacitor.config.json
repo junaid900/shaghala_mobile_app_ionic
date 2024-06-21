@@ -1,0 +1,22 @@
+{
+	"appId": "com.mjcoders.shkalah",
+	"appName": "Shaghala",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"server": {
+		"iosScheme": "https"
+	},
+	"plugins": {
+		"CapacitorFirebaseAuth": {
+			"languageCode": "en",
+			"nativeAuth": false,
+			"providers": [
+				"apple.com",
+				"google.com",
+				"twitter.com",
+				"facebook.com",
+				"phone"
+			]
+		}
+	}
+}

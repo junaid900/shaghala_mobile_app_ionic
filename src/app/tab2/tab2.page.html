@@ -1,0 +1,93 @@
+<!-- <ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+
+
+   
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <ion-row class="header pt10">
+    <ion-col size="8" class="ml10">
+      <img src="assets/images/menu.png" alt="" (click)="openMenu()">
+
+      <!-- <ion-row>
+          <ion-col>
+          </ion-col>
+          <ion-col>
+            <ion-title>
+              Tab 2
+            </ion-title>
+          </ion-col>
+          <ion-col>
+            
+          </ion-col>
+      </ion-row>
+       -->
+    </ion-col>
+
+  </ion-row>
+
+
+  <div class=" top-container">
+  </div>
+  <!-- <div class="main-container"> -->
+  <div class="">
+    <ion-row>
+      <ion-col size=".5"></ion-col>
+      <ion-col size="8.5" class="main-container">
+        <ion-row>
+          <ion-col size="4" class="p0 mt6">
+            <img style="border: black solid;border-radius: 100px; object-fit: contain;" height="82px" src="{{user?appUrl + user.user_image:''}}" onerror="this.src = 'assets/images/user.png'" class="ml10" width="82px" alt="">
+          </ion-col>
+          <ion-col size="1"></ion-col>
+          <ion-col size="6" class="">
+            <p class="txt-prof-complete mb2">{{"Welcome" | translate}}</p>
+            <p class="txt-name mt2 mb2">{{user.name ? user.name :"Skhalah User" }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="pr10">
+          <ion-col size="12" class="pt0">
+            <!-- <ion-item-divider (click)="goToHome()">
+              <ion-label>
+                {{ "Home" | translate}}
+              </ion-label>
+            </ion-item-divider> -->
+            <ion-item-divider *ngIf="user.type != 'local' && checkLogin" (click)="goToProfile()">
+              <ion-label>
+                {{"Profile" | translate}}
+              </ion-label>
+            </ion-item-divider>
+            <ion-item-divider (click)="goToSetting()">
+              <ion-label>
+                {{"Setting" | translate}}
+              </ion-label>
+            </ion-item-divider>
+            <ion-item-divider (click)="goToComplainCenter()">
+              <ion-label>
+                {{"Complaints and Suggestions" | translate}}
+              </ion-label>
+            </ion-item-divider>
+            <ion-item-divider *ngIf="user.type != 'local' && checkLogin" (click)="logout()">
+              <ion-label>
+                {{"Logout" | translate}}
+              </ion-label>
+            </ion-item-divider>
+            <ion-item-divider *ngIf="user.type == 'local' || !checkLogin" (click)="goToLogin()">
+              <ion-label>
+                {{"Login" | translate}}
+              </ion-label>
+            </ion-item-divider>
+            <ion-item-divider class="mb10">
+              <ion-label>
+                {{"ShareApp" | translate}}
+              </ion-label>
+            </ion-item-divider>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <!-- </div> -->
+</ion-content>

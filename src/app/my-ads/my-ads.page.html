@@ -1,0 +1,52 @@
+<ion-row class="header pt6">
+  <!-- <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/menu.png" alt="">
+  </ion-col> -->
+  <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/back.png" (click)="goBack()" alt="">
+    <!-- <img src="assets/images/menu.png" alt=""> -->
+  </ion-col>
+  <ion-col size="7.5" class="m-auto">
+    <ion-title>
+      {{"MY Ads" | translate}}
+    </ion-title>
+  </ion-col>
+  <!-- <ion-col size="1.5" class="m-auto text-center">
+    <ion-icon name="filter" routerLink="/advance-filter"></ion-icon>
+  </ion-col> -->
+</ion-row>
+
+<ion-content>
+  <app-empty-layout *ngIf="!isLoading && list.length < 1"></app-empty-layout>
+  <app-loading *ngIf="isLoading" ></app-loading>
+  <div>
+    <ion-row class="mt10 ion-justify-content-center">
+      <ion-col size="5.6" *ngFor="let item of list">
+        <div class="emp-item cblack  d-flex flex-direction-column">
+          <div class="fav-icon">
+            <ion-label class="status-label" [ngStyle]='item.admin_status == "Active"?{"background-color":"green"}:{"background-color":"red"}'>{{item.admin_status == "Inactive"?"Pending":item.admin_status == 'Active'?"Live":"Rejected"}}</ion-label>
+          </div>
+          <!-- <ion-icon name="heart" class="fav-icon"></ion-icon> -->
+          <!-- <img *ngIf="item.fav != 1" (click)="addToFav(item)" src="assets/images/fav-heart.png" class="fav-icon"
+            width="30px" alt="">
+          <img *ngIf="item.fav > 0" (click)="addToFav(item)" src="assets/images/fav-heart-red.png" class="fav-icon"
+            width="30px" alt=""> -->
+            
+          <img (click)="goToWorkerDetail(item)" src="{{appUrl + item.image}}" onerror="this.src = 'assets/images/image-placeholder.jpeg'" alt="" class="worker-img">
+          <ion-row class="info-container" (click)="goToWorkerDetail(item)">
+            <ion-col>
+              <h6 class="MyriadPro-Bold cblack m0 ion-text-center w100">{{item.lang_name}}</h6>
+              <div class="emp-info">
+                <ion-label class="MyriadPro-Regular">{{item.en_religion}}</ion-label>
+                <p class="m0 p0 MyriadPro-Regular">{{item.place_of_living}} | {{item.age}} {{"years old" | translate}}
+                </p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+      
+    </ion-row>
+  </div>
+
+</ion-content>

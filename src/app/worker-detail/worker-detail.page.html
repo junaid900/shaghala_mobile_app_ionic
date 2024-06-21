@@ -1,0 +1,203 @@
+<ion-row class="header pt6">
+  <!-- <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/menu.png" alt="">
+  </ion-col> -->
+  <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/back.png" (click)="goBack()" alt="">
+    <!-- <img src="assets/images/menu.png" alt=""> -->
+  </ion-col>
+  <ion-col size="7.5" class="m-auto">
+    <!-- <ion-title>
+        Tab 2
+      </ion-title> -->
+  </ion-col>
+  <ion-col size="1.5" class="m-auto text-center">
+    <!-- <img src="assets/images/setting.png" alt=""> -->
+  </ion-col>
+</ion-row>
+
+<ion-content>
+  <div class=" top-container">
+  </div>
+  <div class="worker-detail-page">
+    <ion-row>
+      <ion-col size="4" class="profile-col p0">
+        <img class="profile-image" src="{{appUrl + worker.image}}"
+          onerror="this.src = 'assets/images/image-placeholder.jpeg'" alt="">
+      </ion-col>
+      <ion-col size="7" class="p0 pl10 profile-head-container">
+        <ion-row>
+          <ion-col size="12">
+            <ion-row class="ion-justify-content-end btn-contact">
+              <ion-col size="2" class="contact-btn" (click)="shareApp()">
+                <!-- <ion-button size="small"> -->
+                <img src="assets/images/share.png" alt="">
+                <!-- </ion-button> -->
+              </ion-col>
+              <ion-col size="1"></ion-col>
+              <ion-col size="2" *ngIf="user.type != 'local'" class="contact-btn" (click)="numberCall()">
+                <!-- < size="small" color="success"> -->
+                <img src="assets/images/phone.png" alt="">
+                <!-- </ion-button> -->
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <h3 class="cwhite oneline-elipsize MyriadPro-Bold p0 m0">{{worker.lang_name}}</h3>
+        <p class="p0 m0 cwhite MyriadPro-Regular oneline-elipsize">{{worker.en_religion}}</p>
+        <p class="p0 m0 cwhite MyriadPro-Regular oneline-elipsize">{{worker.place_of_living}}</p>
+      </ion-col>
+    </ion-row>
+    <div>
+      <ion-row>
+        <ion-col size="12">
+          <div class="main-detail-container">
+            <ion-row>
+              <ion-col>
+                <ion-label>{{"Salary" | translate}}</ion-label>
+                <p class="p0 m0">{{worker.salary}}</p>
+              </ion-col>
+              <ion-col>
+                <ion-label>{{"Age" | translate}}</ion-label>
+                <p class="p0 m0">{{worker.age}}</p>
+              </ion-col>
+              <ion-col>
+                <ion-label>{{"Experience" | translate}}</ion-label>
+                <p class="p0 m0">2 {{"Years" | translate}}</p>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+        <ion-col size="12" *ngIf="isLoading" class="d-flex justify-content-center align-items-center">
+          <ion-spinner color="primary">
+
+          </ion-spinner>
+        </ion-col>
+        <ion-col size="12" *ngIf="!isLoading">
+          <div>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{"Social Status" | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.is_married == 'Yes'? ("Married" | translate) : ("Not Married" |
+                  translate)}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{"Children" | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.no_of_childs}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{'Education' | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.lang_degree}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{"Skin" | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.skin_color}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{"Type" | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.type}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{"Height" | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.height}} cm</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{"Weight" | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.weight}} kg</ion-label>
+              </ion-col>
+            </ion-row>
+            <!-- <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">English</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.english_level}}</ion-label>
+              </ion-col>
+            </ion-row> -->
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{"Arabic" | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.arabic_level}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{"Place of birth" | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.place_of_birth}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{"Place of living" | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.place_of_living}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{"Skills" | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <p class="p0 m0 pt4 info-val">{{worker.skills}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{'Experience' | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <ion-label class="info-val">{{worker.experience}} {{"years" | translate}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="info-item p0 m0">
+              <ion-col class="ion-text-start" size="4">
+                <ion-label class="info-key">{{'More details' | translate}}</ion-label>
+              </ion-col>
+              <ion-col class="ion-text-end" size="8">
+                <p class="p0 m0 info-val">{{worker.remarks}}</p>
+              </ion-col>
+            </ion-row>
+
+          </div>
+        </ion-col>
+        <ion-col size="12" *ngIf="worker.user_id != user.user_id && user.type != 'Company' && user.type != 'local' && worker.reserved_count < 1" class="d-flex justify-content-center">
+          <!-- <ion-button color="none" (click)="makeReservation()"  class="btn-send">
+            {{"Make Reservation" | translate}}
+          </ion-button> -->
+        </ion-col>
+      </ion-row>
+    </div>
+
+  </div>
+</ion-content>

@@ -1,0 +1,99 @@
+<ion-row class="header pt6">
+  <!-- <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/menu.png" alt="">
+  </ion-col> -->
+  <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/back.png" (click)="goBack()" alt="">
+    <!-- <img src="assets/images/menu.png" alt=""> -->
+  </ion-col>
+  <ion-col size="7.5" class="m-auto">
+    <!-- <ion-title>
+        Tab 2
+      </ion-title> -->
+  </ion-col>
+  <ion-col size="1.5" class="m-auto text-center">
+    <!-- <img src="assets/images/setting.png" alt=""> -->
+  </ion-col>
+</ion-row>
+
+<ion-content>
+  <div class="top-container">
+    <ion-row class=" ion-align-content-end">
+      <ion-col size="4" class="ion-text-center">
+        <img style="border: white solid;border-radius:100px; object-fit: contain;" width="100px" height="100px"
+          src="{{appUrl + user.user_image}}" onerror="this.src='assets/images/account_profile.png'" alt="">
+      </ion-col>
+      <ion-col size=".5">
+      </ion-col>
+      <ion-col size="7.5" class="mt10">
+        <p class="p0 m0 txt-complete">{{"Welcome" | translate}}</p>
+        <h2 class="p0 m0 txt-name Poppins-SemiBold oneline-elipsize">{{user.name}}</h2>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="account-content cblack">
+    <ion-row class="ac-item" (click)="goToEditProfile()">
+      <ion-col size="2">
+        <img src="assets/images/account-edit-user.png" alt="">
+      </ion-col>
+      <ion-col size="1"></ion-col>
+      <ion-col size="9">
+        <p class="m0 ac-item-title">{{"MY PROFILE"|translate}}</p>
+        <p class="m0 ac-item-detail">{{"EDIT ALL PROFILE DETAILS" | translate}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ac-item" (click)="getMyWorkers()">
+      <ion-col size="2">
+        <img src="assets/images/account-edit-worker.png" alt="">
+      </ion-col>
+      <ion-col size="1"></ion-col>
+      <ion-col size="9">
+        <p class="m0 ac-item-title">{{"MY ADS"|translate}}</p>
+        <p class="m0 ac-item-detail">{{"VIEW ALL PREVIOUS ADDED ADDS"|translate}}</p>
+        <p class="m0 ac-item-desc">{{"(CAN EDIT - CAN DELETE)"| translate}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ac-item" (click)="goToAddWorker()">
+      <ion-col size="2">
+        <img src="assets/images/account-add-worker.png" alt="">
+      </ion-col>
+      <ion-col size="1"></ion-col>
+      <ion-col size="9">
+        <p class="m0 ac-item-title">{{"ADD NEW ADS"|translate}}</p>
+        <p class="m0 ac-item-detail">{{"ADD NEW ADS (FOR INDIVIDUAL ACCOUNTCAN ADD ONLY ONE ADVERTISEMENT ANDEDIT IT, BUT FOR COMPANY)" | translate}}</p>
+        <p class="m0 ac-item-desc">{{"(PAID ACCOUNT) CAN ADD NOT LIITED ADDS)"|translate}}</p>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>
+<ion-footer class="cwhite bgwhite">
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-slides pager="true" [options]="slideOpts" class="slider" *ngIf="!isLoading">
+        <ion-slide *ngFor="let item of profileSlides">
+          <ion-row>
+            <ion-col size="12">
+              <img
+                src="{{appUrl + item.image}}">
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+    <ion-col size="12" class="ion-text-center" *ngIf="isLoading">
+      <ion-spinner color="primary" name="crescent"></ion-spinner>
+    </ion-col>
+    <!-- <ion-col size="12">
+      <ion-row>
+        <ion-col class="d-flex ion-align-items-center ion-justify-content-end">
+          <img src="assets/icon/facebook.png" alt="">
+        </ion-col>
+        <ion-col class="d-flex ion-align-items-center ion-justify-content-start">
+          <img src="assets/icon/mail.png" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-col> -->
+  </ion-row>
+</ion-footer>

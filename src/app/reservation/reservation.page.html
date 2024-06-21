@@ -1,0 +1,74 @@
+<ion-row class="header pt6">
+  <!-- <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/menu.png" alt="">
+  </ion-col> -->
+  <ion-col size="1.5" class="text-center m-auto">
+    <img src="assets/images/back.png" (click)="goBack()" alt="">
+  </ion-col>
+  <ion-col size="9" class="m-auto">
+    <ion-title>
+      {{"My Reservations" | translate}}
+    </ion-title>
+  </ion-col>
+  <ion-col size="1.5" class="m-auto text-center">
+    <ion-icon (click)="changeShowType()" style="font-size: 20px;" *ngIf="showType == 'list'" name="grid"></ion-icon>
+    <ion-icon (click)="changeShowType()" style="font-size: 20px;" *ngIf="showType == 'grid'" name="menu"></ion-icon>
+    <!-- <ion-icon name="filter" routerLink="/advance-filter"></ion-icon> -->
+  </ion-col>
+</ion-row>
+
+<ion-content>
+
+  <div>
+   
+    <app-empty-layout style="width: 100%;" *ngIf="!isLoading && list.length < 1"></app-empty-layout>
+    <app-loading *ngIf="isLoading"></app-loading>
+    <ion-row class="mt10 ion-justify-content-center" *ngIf="showType == 'grid'">
+      <ion-col size="5.6" *ngFor="let item of list">
+        <div class="emp-item cblack  d-flex flex-direction-column">
+   
+
+          <img (click)="goToWorkerDetail(item)" src="{{appUrl + item.image}}"
+            onerror="this.src = 'assets/images/image-placeholder.jpeg'" alt="" class="worker-img">
+          <ion-row class="info-container" (click)="goToWorkerDetail(item)">
+            <ion-col>
+              <h6 class="MyriadPro-Bold cblack m0 ion-text-center w100">{{item.lang_name}}</h6>
+              <div class="emp-info">
+                <ion-label class="MyriadPro-Regular">{{item.en_religion}}</ion-label>
+                <p class="m0 p0 MyriadPro-Regular">{{item.place_of_living}} | {{item.age}} {{"years old" | translate}}
+                </p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="mt10 ion-justify-content-center" *ngIf="showType == 'list'">
+      <ion-col size="12" *ngFor="let item of list">
+        <div class="emp-item cblack  d-flex flex-direction-column">
+          <!-- <ion-icon name="heart" class="fav-icon"></ion-icon> -->
+          
+          <ion-row class="info-container list touch-opacity">
+
+            <ion-col size="4">
+              <img (click)="goToWorkerDetail(item)" src="{{appUrl + item.image}}"
+                onerror="this.src = 'assets/images/image-placeholder.jpeg'" alt="" class="worker-img-list">
+            </ion-col>
+            <ion-col size="8">
+              <h6 class="MyriadPro-Bold cblack m0 pt10 w100">{{item.lang_name}}</h6>
+              <div class="emp-info">
+                <ion-label class="MyriadPro-Regular">{{"Religion" | translate}} : {{item.en_religion}}</ion-label>
+                <p class="m0 p0 MyriadPro-Regular">{{"Place of living"}} : {{item.place_of_living}}
+                </p>
+                <p class="m0 p0 MyriadPro-Regular">{{"Age"}} : {{item.age}} {{"years old" | translate}}
+                </p>
+                <!-- {{item.age}} {{"years old" | translate}} -->
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>

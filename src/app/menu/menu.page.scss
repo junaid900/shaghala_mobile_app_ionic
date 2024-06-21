@@ -1,0 +1,19 @@
+ion-list{
+    background:#ffffff;
+    ion-item{
+        --background:#ffffff;
+        color: rgb(44, 44, 44);
+    }
+    ion-item > button:hover{
+        --background:#ffffff;
+        color: rgb(44, 44, 44);
+    }
+}
+// ion-content{
+//     color: rgba(255, 255, 255, 0.616);
+// }
+ion-icon{
+    font-size: 18px;
+    margin-right: 10px;
+    color: rgb(44, 44, 44);
+}
